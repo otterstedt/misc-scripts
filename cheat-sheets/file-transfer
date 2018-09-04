@@ -1,3 +1,3 @@
 Sync files
 
-rsync -av --ignore-existing host:/path/to/folder /path/to/folder
+rsync -avz --ignore-existing host:/path/to/folder /path/to/folder
