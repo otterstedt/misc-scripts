@@ -6,6 +6,12 @@ Remove corrupt images
 find . -name "*jpg" -exec jpeginfo -c {} \; | grep -E "WARNING|ERROR" | cut -d " " -f 1 | xargs rm
 </pre>
 
+Replace ':'
+
+<pre>
+find . -name "*:*" -exec rename 's|:|-|g' {} \;
+</pre>
+
 Generate file list
 <pre>
 ls *.jpg | sed "s/^/file '/;s/$/'/" > files.txt
