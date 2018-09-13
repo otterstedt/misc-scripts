@@ -20,3 +20,17 @@ Generate video file
 <pre>
 ffmpeg -f concat -i files.txt tl/output.mpeg
 </pre>
+
+# Image manipulation
+
+Image overlay
+<pre>
+composite <-blend 30> 1.jpg 2.jpg res.jpg
+</pre>
+
+# Static maps
+
+Tileserver GL
+<pre>
+http://localhost:8080/styles/klokantech-basic/static/-73.655,45.496,13@0,0/160x160.png
+</pre>
