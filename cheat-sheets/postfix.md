@@ -78,6 +78,23 @@ Add user 'postfix' to group 'sasl'
 ```
 adduser postfix sasl
 ```
+saslauthd
+
+sudo apt install sasl2-bin
+```
+warning: SASL authentication failure: cannot connect to saslauthd server: No such file or directory
+
+The warning message tells me that saslauthd can’t be located. The real location is /var/spool/postfix/var/run/saslauthd, but postfix is expecting to find it in /var/run/saslauthd.  Create a symlink as described below and see if that fixes your problem.
+
+sudo ln -s /var/spool/postfix/var/run/saslauthd /var/run
+sudo chown root:sasl /var/spool/postfix/var/run/saslauthd
+
+https://nfolamp.wordpress.com/2013/02/04/fixing-postfix-and-saslauthd-cannot-connect-to-saslauthd/
+
+```
+
+
+
 
 Links:
 http://postfix.state-of-mind.de/patrick.koetter/smtpauth/smtp_auth_mailclients.html
