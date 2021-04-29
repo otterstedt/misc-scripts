@@ -1,0 +1,2 @@
+- https://www.geekbench.com/download/linux/
+- apt install hardinfo
